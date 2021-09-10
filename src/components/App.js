@@ -77,7 +77,7 @@ export default function App() {
                     })
                     nextDate += 1000
                 }
-            }, 30)
+            }, 1000)
             localStorage.clear()
             localStorage.setItem("interval-id", interval)
         } else {
@@ -117,20 +117,22 @@ export default function App() {
                 <p className="time">{timeFormat(timeRemaining)}</p>
             </div>
 
-            <div className="icons" onClick={controlTimer}>
-                { // display icons based on the pause state
-                    pause ? 
-                    <i
-                        class={(hovered1 ? "fas" : "far") + " fa-lg fa-play-circle"} 
-                        onMouseEnter={() => setHovered1(true)}
-                        onMouseLeave={() => setHovered1(false)}
-                    /> :
-                    <i 
-                        class={(hovered2 ? "fas" : "far") + " fa-lg fa-pause-circle"} 
-                        onMouseEnter={() => setHovered2(true)}
-                        onMouseLeave={() => setHovered2(false)}
-                    />
-                }
+            <div className="icons">
+                <div onClick={controlTimer}>
+                    { // display icons based on the pause state
+                        pause ? 
+                        <i
+                            class={(hovered1 ? "fas" : "far") + " fa-lg fa-play-circle"} 
+                            onMouseEnter={() => setHovered1(true)}
+                            onMouseLeave={() => setHovered1(false)}
+                        /> :
+                        <i 
+                            class={(hovered2 ? "fas" : "far") + " fa-lg fa-pause-circle"} 
+                            onMouseEnter={() => setHovered2(true)}
+                            onMouseLeave={() => setHovered2(false)}
+                        />
+                    }
+                </div>
                 <i class="fa-lg fas fa-undo-alt" onClick={resetTimer} />
             </div>
         </div>

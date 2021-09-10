@@ -42,3 +42,10 @@ i:hover {
 .time {
     font-size: 3rem;
 }
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
